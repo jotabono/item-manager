@@ -1,4 +1,13 @@
-.crop-text-3 {
+  .product-card {
+    min-height:425px;
+  }
+  
+  .product-card-img {
+    height: 200px; 
+    object-fit:cover;
+  }
+
+  .crop-text-3 {
     -webkit-line-clamp: 3;
     overflow : hidden;
     text-overflow: ellipsis;
