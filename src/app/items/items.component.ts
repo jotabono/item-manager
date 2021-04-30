@@ -10,6 +10,9 @@ import { ItemsService } from '../items.service';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
+  
+  filterTerm: string;
+
   items: IItem[] | undefined;
 
   constructor(private itemsService: ItemsService) { }
