@@ -8,12 +8,14 @@ import { ItemsComponent } from './items/items.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderPipe } from './order.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ItemsComponent
+    ItemsComponent,
+    OrderPipe
   ],
   imports: [
     HttpClientModule,

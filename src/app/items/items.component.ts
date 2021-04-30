@@ -10,8 +10,10 @@ import { ItemsService } from '../items.service';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
-  
+
   filterTerm: string;
+  orderField: string;
+  orderCriteria: string;
 
   items: IItem[] | undefined;
 
@@ -19,6 +21,8 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItems();
+    this.orderField = 'title'
+    this.orderCriteria = 'asc'
   }
 
   getItems(): void {

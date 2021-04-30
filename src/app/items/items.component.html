@@ -6,7 +6,7 @@
 </div>
 
     <div class="row mt-5">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of items | filter:filterTerm">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of items | filter:filterTerm | order: orderField: orderCriteria">
             <div class="card product-card mb-4">
                 <img class="card-img-top product-card-img" src="{{item.image}}" alt="{{item.title}}">
                 <div class="card-body">
