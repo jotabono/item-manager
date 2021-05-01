@@ -1,0 +1,44 @@
+<form novalidate
+[formGroup]="form">
+<div class="row mt-5">
+	<div class="col-12">
+		<input type="text"
+		formControlName="title"
+		class="form-control"
+		placeholder="Title"
+		(keyup)="search(form.value)"
+		/>
+	</div>
+	<div class="col-12 col-sm-6 col-md-3">
+		<input type="text"
+		formControlName="description"
+		class="form-control"
+		placeholder="Description"
+		/>
+	</div>
+	<div class="col-12 col-sm-6 col-md-3">
+		<input type="text"
+		formControlName="pricefrom"
+		class="form-control"
+		placeholder="Price from"
+		/>
+	</div>
+	<div class="col-12 col-sm-6 col-md-3">
+		<input type="text"
+		formControlName="priceto"
+		class="form-control"
+		placeholder="Price to"
+		/>
+	</div>
+    <div class="col-12 col-sm-6 col-md-3">
+		<input type="text"
+		formControlName="email"
+		class="form-control"
+		placeholder="Email"
+		/>
+	</div>
+	<div class="col-md-3 col-sm-3">
+		<button class="btn btn-primary"
+		(click)="search(form.value)">Search</button>
+	</div>
+</div>

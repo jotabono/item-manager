@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'item-manager';
+  searchText: string;
+  filters: Object;
+
+  constructor() {}
+
 }
