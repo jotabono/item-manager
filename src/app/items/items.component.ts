@@ -14,7 +14,8 @@ export class ItemsComponent implements OnInit {
 
 	items: IItem[] | [];
 	filteredItems: any[] = [];
-
+	actualPage: number = 1;
+	
 	constructor(private itemsService: ItemsService) { }
 
 	ngOnInit(): void {

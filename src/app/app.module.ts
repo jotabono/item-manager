@@ -14,6 +14,8 @@ import { FilterPipe } from './filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SortComponent } from './sort/sort.component';
 import { SortPipe } from './sort.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { SortPipe } from './sort.pipe';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
