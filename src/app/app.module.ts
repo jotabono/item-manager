@@ -12,6 +12,8 @@ import { OrderPipe } from './order.pipe';
 import { FilterPipe } from './filter.pipe';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SortComponent } from './sort/sort.component';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ItemsComponent,
     OrderPipe,
     FilterPipe,
-    SearchComponent
+    SearchComponent,
+    SortComponent,
+    SortPipe
   ],
   imports: [
     HttpClientModule,

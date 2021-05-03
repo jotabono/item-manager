@@ -2,36 +2,37 @@
 [formGroup]="form">
 <div class="row mt-5">
 	<div class="col-12">
-		<input type="text"
+		<input type="search"
 		formControlName="title"
 		class="form-control"
 		placeholder="Title"
 		(keyup)="search(form.value)"
+		(search)="search(form.value)"
 		/>
 	</div>
 	<div class="col-12 col-sm-6 col-md-3">
-		<input type="text"
+		<input type="search"
 		formControlName="description"
 		class="form-control"
 		placeholder="Description"
 		/>
 	</div>
 	<div class="col-12 col-sm-6 col-md-3">
-		<input type="text"
+		<input type="search"
 		formControlName="pricefrom"
 		class="form-control"
 		placeholder="Price from"
 		/>
 	</div>
 	<div class="col-12 col-sm-6 col-md-3">
-		<input type="text"
+		<input type="search"
 		formControlName="priceto"
 		class="form-control"
 		placeholder="Price to"
 		/>
 	</div>
     <div class="col-12 col-sm-6 col-md-3">
-		<input type="text"
+		<input type="search"
 		formControlName="email"
 		class="form-control"
 		placeholder="Email"
