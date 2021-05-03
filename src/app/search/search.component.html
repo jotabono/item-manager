@@ -1,45 +1,34 @@
-<form novalidate
-[formGroup]="form">
-<div class="row mt-5">
-	<div class="col-12">
-		<input type="search"
-		formControlName="title"
-		class="form-control"
-		placeholder="Title"
-		(keyup)="search(form.value)"
-		(search)="search(form.value)"
-		/>
-	</div>
-	<div class="col-12 col-sm-6 col-md-3">
-		<input type="search"
-		formControlName="description"
-		class="form-control"
-		placeholder="Description"
-		/>
-	</div>
-	<div class="col-12 col-sm-6 col-md-3">
-		<input type="search"
-		formControlName="pricefrom"
-		class="form-control"
-		placeholder="Price from"
-		/>
-	</div>
-	<div class="col-12 col-sm-6 col-md-3">
-		<input type="search"
-		formControlName="priceto"
-		class="form-control"
-		placeholder="Price to"
-		/>
-	</div>
-    <div class="col-12 col-sm-6 col-md-3">
-		<input type="search"
-		formControlName="email"
-		class="form-control"
-		placeholder="Email"
-		/>
-	</div>
-	<div class="col-md-3 col-sm-3">
-		<button class="btn btn-primary"
-		(click)="search(form.value)">Search</button>
-	</div>
+<div class="container pt-5">
+	<form novalidate [formGroup]="form">
+		<div class="row">
+			<div class="d-flex justify-content-center mb-3">
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-12">
+							<input type="search" formControlName="title" class="form-control" placeholder="Title"
+								(keyup)="search(form.value)" (search)="search(form.value)" />
+						</div>
+						<div class="col-12 col-sm-6 col-md-3">
+							<input type="search" formControlName="description" class="form-control"
+								placeholder="Description" />
+						</div>
+						<div class="col-12 col-sm-6 col-md-3">
+							<input type="search" formControlName="pricefrom" class="form-control"
+								placeholder="Price from" />
+						</div>
+						<div class="col-12 col-sm-6 col-md-3">
+							<input type="search" formControlName="priceto" class="form-control"
+								placeholder="Price to" />
+						</div>
+						<div class="col-12 col-sm-6 col-md-3">
+							<input type="search" formControlName="email" class="form-control" placeholder="Email" />
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<button class="btn btn-primary main-btn" (click)="search(form.value)">Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>

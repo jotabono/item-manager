@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-sort',
@@ -8,7 +9,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SortComponent implements OnInit {
 	@Output() sortProperty: EventEmitter<string> = new EventEmitter<string>();
   @Output() sortCriteria: EventEmitter<boolean> = new EventEmitter<boolean>();
-  order: boolean;
+  property: string = "title";
+  order: boolean = false;
 	constructor() { }
 
   ngOnInit(): void {
@@ -20,10 +22,12 @@ export class SortComponent implements OnInit {
 	}
 
   setSortProperty(property){
+    this.property = property;
     this.sortProperty.emit(property);
   }
 
   setSortCriteria(order){
+    this.order = order;
     this.sortCriteria.emit(order);
   }
 }

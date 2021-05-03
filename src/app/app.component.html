@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
-<main class="container">
+<div class="bg-white">
   <app-search (groupFilters)="filters = $event"></app-search>
   <app-sort (sortProperty)="property = $event" (sortCriteria)="criteria = $event"></app-sort>
+</div>
+<main class="container main-border">
   <app-items [groupFilters]="filters" [sortProperty]="property" [sortCriteria]="criteria"></app-items>
 </main>

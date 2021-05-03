@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(242, 241, 239);
+    overflow-x: none;
+}
+
+.main-link {
+    color: #1b8377;
+}
+
+.main-link:hover {
+    color: #13c1ac;
+}
+
+.btn-link{
+    color: #253238;
+}
+
+.btn-link:hover{
+    color: #1c262b;
+}
+
+.btn:focus, .form-control:focus {
+    box-shadow: none;
+    outline: none !important;
+}
+
+.form-control:focus {
+    border: 1px solid #13c1ac;
+}
+
+.main-btn{
+    border: none;
+    background-color: #1b8377;
+}
+
+.main-btn:active, .main-btn:focus{
+    border: none !important;
+    background-color: #1b8377 !important;
+}
+
+.main-btn:hover {
+    border: none;
+    background-color: #13c1ac;
+}
+
+.secondary-btn{
+    color:white;
+    border: none;
+    background-color: #13c1ac;
+}
+
+.secondary-btn:active, .secondary-btn:focus{
+    color:#253238;
+    border: none !important;
+    background-color: #13c1ada9 !important;
+}
+
+.secondary-btn:hover {
+    color:#253238;
+    border: none;
+    background-color: #13c1ada9;
+}
+
+.nav-border {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.main-border {
+    border-top: 1px solid #ebebeb;
+}
