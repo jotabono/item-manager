@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ItemsComponent } from './items/items.component';
 import { SearchComponent } from './search/search.component';
 
-import { OrderPipe } from './order.pipe';
 import { FilterPipe } from './filter.pipe';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -22,7 +21,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppComponent,
     NavbarComponent,
     ItemsComponent,
-    OrderPipe,
     FilterPipe,
     SearchComponent,
     SortComponent,
