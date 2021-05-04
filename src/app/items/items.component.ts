@@ -15,11 +15,13 @@ export class ItemsComponent implements OnInit {
 	items: IItem[] | [];
 	filteredItems: any[] = [];
 	actualPage: number = 1;
-	
+	favouriteItems: any[] = [];
+
 	constructor(private itemsService: ItemsService) { }
 
 	ngOnInit(): void {
 		this.getItems();
+		if(localStorage.getItem("favs")) this.favouriteItems = JSON.parse(localStorage.getItem("favs"));
 	}
 
 	ngOnChanges(): void {
@@ -61,5 +63,24 @@ export class ItemsComponent implements OnInit {
 			this.items = items;
 			this.filteredItems = this.filteredItems.length > 0 ? this.filteredItems : this.items;
 		});
+	}
+
+	setFavourite(uuid): void {
+		this.favouriteItems.push(uuid);
+		localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
+	}
+
+	deleteFavourite(uuid): void {
+		const index: number = this.favouriteItems.indexOf(uuid);
+		if (index !== -1) {
+			this.favouriteItems.splice(index, 1);
+			localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
+		}
+	}
+
+	isFavourite(uuid): boolean {
+		var favs = [];
+		if(localStorage.getItem("favs")) favs = JSON.parse(localStorage.getItem("favs"));
+		return favs.find(x => x === uuid);
 	}
 }
