@@ -65,13 +65,14 @@ export class ItemsComponent implements OnInit {
 		});
 	}
 
-	setFavourite(uuid): void {
-		this.favouriteItems.push(uuid);
+	setFavourite(item): void {
+		this.favouriteItems.push(item);
 		localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
 	}
 
 	deleteFavourite(uuid): void {
-		const index: number = this.favouriteItems.indexOf(uuid);
+		var uuidToDelete = uuid;
+		const index: number = this.favouriteItems.findIndex(({ uuid }) => uuid === uuidToDelete);
 		if (index !== -1) {
 			this.favouriteItems.splice(index, 1);
 			localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
@@ -79,8 +80,9 @@ export class ItemsComponent implements OnInit {
 	}
 
 	isFavourite(uuid): boolean {
+		var uuidToCheck = uuid;
 		var favs = [];
 		if(localStorage.getItem("favs")) favs = JSON.parse(localStorage.getItem("favs"));
-		return favs.find(x => x === uuid);
+		return favs.find(({ uuid }) => uuid === uuidToCheck);
 	}
 }

@@ -15,7 +15,7 @@
             </div>
             <div class="mt-3 mt-lg-0 ml-lg-3 p-3 text-right">
               <h3 class="mb-0 font-weight-semibold">{{item.price}}€</h3>
-              <button type="button" class="btn btn-link favorite-btn p-0" *ngIf="!isFavourite(item.uuid)" (click)="setFavourite(item.uuid)"><i class="far fa-heart fav-heart"></i></button>
+              <button type="button" class="btn btn-link favorite-btn p-0" *ngIf="!isFavourite(item.uuid)" (click)="setFavourite(item)"><i class="far fa-heart fav-heart"></i></button>
               <button type="button" class="btn btn-link favorite-btn p-0" *ngIf="isFavourite(item.uuid)" (click)="deleteFavourite(item.uuid)"><i class="fas fa-heart fav-heart"></i></button>
             </div>
           </div>

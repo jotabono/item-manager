@@ -1,40 +1,67 @@
 <nav class="navbar navbar-expand-lg nav-border navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Item Manager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Item Manager</a>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#exampleModalLong"><span>Favs #<i class="fas fa-heart"></i></span></a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn secondary-btn my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#exampleModalLong"><span>Favs #<i
+              class="fas fa-heart"></i></span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn secondary-btn my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
 
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">My favourite items</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">My favourite items</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12"
+            *ngFor="let favItem of favItems">
+            <div class="d-flex justify-content-center mb-3">
+              <div class="col-md-10 pl-0 pr-0">
+                <div class="card card-body border-0 p-0">
+                  <div
+                    class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                    <div class="mb-3 mb-lg-0"> <img class="rounded-circle" src="{{favItem.image}}" width="60"
+                        height="60" alt=""> </div>
+                    <div class="media-body p-3">
+                      <h6 class="media-title font-weight-semibold"> <a class="main-link" href="#"
+                          data-abc="true">{{favItem.title}}</a> </h6>
+                    </div>
+                    <div class="mt-3 mt-lg-0 ml-lg-3 p-3 text-right">
+                      <button type="button" class="btn btn-link favorite-btn p-0"
+                        (click)="deleteFavourite(favItem.uuid)"><i class="fas fa-heart fav-heart"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          ...
+        <div *ngIf="!favItems.length">
+          You don't have favorited items yet :(
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
