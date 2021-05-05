@@ -1,27 +1,32 @@
-# ItemManager
+## The Item Manager by Javier Bono
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
-## Development server
+Requirements
+- `node 12+`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Initial Setup
 
-## Code scaffolding
+Cloning the repository
+```
+git clone https://github.com/jotabono/item-manager.git
+cd item-manager
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Installing dependencies
+```
+npm install
+```
 
-## Build
+## How to run the application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Once you've installed npm packages. Run this command to run and open the project on your browser.
+```
+npm run start:open
+```
 
-## Running unit tests
+By default it will open a new tab in your browser with the project running on port 4200 `http://localhost:4200/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Extra commands
+- `npm run test` - To execute unit tests
+- `npm run lint` - To execute Ng Lint (all passed!)
