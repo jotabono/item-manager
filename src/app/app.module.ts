@@ -9,8 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ItemsComponent } from './items/items.component';
 import { SearchComponent } from './search/search.component';
 
-import { FilterPipe } from './filter.pipe';
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SortComponent } from './sort/sort.component';
 import { SortPipe } from './sort.pipe';
@@ -23,7 +21,6 @@ import { FavouriteItemsComponent } from './favourite-items/favourite-items.compo
     AppComponent,
     NavbarComponent,
     ItemsComponent,
-    FilterPipe,
     SearchComponent,
     SortComponent,
     SortPipe,
