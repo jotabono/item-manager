@@ -7,26 +7,26 @@ import { NgClass } from '@angular/common';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent implements OnInit {
-	@Output() sortProperty: EventEmitter<string> = new EventEmitter<string>();
+  @Output() sortProperty: EventEmitter<string> = new EventEmitter<string>();
   @Output() sortCriteria: EventEmitter<boolean> = new EventEmitter<boolean>();
-  property: string = "title";
-  order: boolean = false;
-	constructor() { }
+  property = 'title';
+  order = false;
+  constructor() { }
 
   ngOnInit(): void {
     this.buildDefaultSort();
   }
 
-	buildDefaultSort(): void {
-    this.sortProperty.emit("title");
-	}
+  buildDefaultSort(): void {
+    this.sortProperty.emit('title');
+  }
 
-  setSortProperty(property){
+  setSortProperty(property): void {
     this.property = property;
     this.sortProperty.emit(property);
   }
 
-  setSortCriteria(order){
+  setSortCriteria(order): void {
     this.order = order;
     this.sortCriteria.emit(order);
   }

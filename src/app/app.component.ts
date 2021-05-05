@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'item-manager';
-  filters: Object;
+  filters: object;
   property: string;
   criteria: boolean;
 
-  constructor() {}
+  constructor() { }
 
 }

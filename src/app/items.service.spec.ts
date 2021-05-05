@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { ItemsService } from './items.service';
 
 describe('ItemsService', () => {
@@ -13,7 +13,7 @@ describe('ItemsService', () => {
       imports: [HttpClientTestingModule]
     });
     service = TestBed.inject(ItemsService);
-    httpMock = TestBed.get(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);
   });
 

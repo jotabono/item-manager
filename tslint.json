@@ -4,6 +4,8 @@
     "codelyzer"
   ],
   "rules": {
+    "no-string-literal": false,
+    "no-bitwise": false,
     "align": {
       "options": [
         "parameters",
@@ -24,7 +26,9 @@
     "import-spacing": true,
     "indent": {
       "options": [
-        "spaces"
+        true,
+        "tabs",
+        4
       ]
     },
     "max-classes-per-file": false,

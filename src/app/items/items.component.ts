@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { IItem } from '../../models/interfaces';
 import { ItemsService } from '../items.service';
 
@@ -7,25 +7,29 @@ import { ItemsService } from '../items.service';
 	templateUrl: './items.component.html',
 	styleUrls: ['./items.component.scss']
 })
-export class ItemsComponent implements OnInit {
-	@Input() groupFilters: Object;
+export class ItemsComponent implements OnInit, OnChanges {
+	@Input() groupFilters: object;
 	@Input() sortProperty: string;
 	@Input() sortCriteria: boolean;
 
 	items: IItem[] | [];
 	filteredItems: any[] = [];
-	actualPage: number = 1;
+	actualPage = 1;
 	favouriteItems: any[] = [];
 
 	constructor(private itemsService: ItemsService) { }
 
 	ngOnInit(): void {
 		this.getItems();
-		if(localStorage.getItem("favs")) this.favouriteItems = JSON.parse(localStorage.getItem("favs"));
+		if (localStorage.getItem('favs')) {
+			this.favouriteItems = JSON.parse(localStorage.getItem('favs'));
+		}
 	}
 
 	ngOnChanges(): void {
-		if (this.groupFilters) this.filterItemsList(this.groupFilters, this.items);
+		if (this.groupFilters) {
+			this.filterItemsList(this.groupFilters, this.items);
+		}
 	}
 
 	filterItemsList(filters: any, items: any): void {
@@ -35,7 +39,7 @@ export class ItemsComponent implements OnInit {
 			let result = keys.map(key => {
 				if (!~key.indexOf('price')) {
 					if (item[key]) {
-						return String(item[key]).toLowerCase().includes(String(filters[key]).toLowerCase())
+						return String(item[key]).toLowerCase().includes(String(filters[key]).toLowerCase());
 					} else {
 						return false;
 					}
@@ -53,9 +57,8 @@ export class ItemsComponent implements OnInit {
 					result.push(false);
 				}
 			}
-			return result.reduce((acc, cur: any) => { return acc & cur }, 1)
-		}
-		console.log(filterItem);
+			return result.reduce((acc, cur: any) => acc & cur, 1);
+		};
 		this.filteredItems = this.items.filter(filterItem);
 	}
 
@@ -68,13 +71,13 @@ export class ItemsComponent implements OnInit {
 
 	setFavourite(item): void {
 		this.favouriteItems = [];
-		this.favouriteItems = JSON.parse(localStorage.getItem("favs"));
+		this.favouriteItems = JSON.parse(localStorage.getItem('favs'));
 		this.favouriteItems.push(item);
 		localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
 	}
 
-	deleteFavourite(uuid): void {
-		var uuidToDelete = uuid;
+	deleteFavourite(itemUuid): void {
+		const uuidToDelete = itemUuid;
 		const index: number = this.favouriteItems.findIndex(({ uuid }) => uuid === uuidToDelete);
 		if (index !== -1) {
 			this.favouriteItems.splice(index, 1);
@@ -82,10 +85,12 @@ export class ItemsComponent implements OnInit {
 		}
 	}
 
-	isFavourite(uuid): boolean {
-		var uuidToCheck = uuid;
-		var favs = [];
-		if(localStorage.getItem("favs")) favs = JSON.parse(localStorage.getItem("favs"));
+	isFavourite(itemUuid): boolean {
+		const uuidToCheck = itemUuid;
+		let favs = [];
+		if (localStorage.getItem('fav')){
+			favs = JSON.parse(localStorage.getItem('favs'));
+		}
 		return favs.find(({ uuid }) => uuid === uuidToCheck);
 	}
 }

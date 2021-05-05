@@ -24,25 +24,25 @@ export class ItemsService {
       .get<IItem[]>(this.items, this.httpOptions)
       .pipe(
         map((list) => {
-          return list
+          return list;
         })
       )
       .pipe(catchError(this.handleError<IItem[]>('getItems', [])));
   }
 
-    /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-     private handleError<T>(operation = 'operation', result?: T): (error: any) => Observable<T> {
-      return (error: any): Observable<T> => {
-        console.error(error); // log to console instead
-  
-        // Let the app keep running by returning an empty result.
-        return of(result as T);
-      };
-    }
+  /*
+ * Handle Http operation that failed.
+ * Let the app continue.
+ * @param operation - name of the operation that failed
+ * @param result - optional value to return as the observable result
+ */
+  private handleError<T>(operation = 'operation', result?: T): (error: any) => Observable<T> {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 
 }

@@ -9,7 +9,7 @@ import { FavouriteItemsService } from '../favourite-items.service';
 })
 export class FavouriteItemsComponent implements OnInit {
   favItems: IItem[] | [];
-  searchTitle: string = "";
+  searchTitle: string;
 
   constructor(private favouriteItemsService: FavouriteItemsService) { }
 
@@ -21,8 +21,8 @@ export class FavouriteItemsComponent implements OnInit {
     this.favItems = this.favouriteItemsService.getFavouriteItems();
   }
 
-  deleteFavourite(uuid): void {
-    var uuidToDelete = uuid;
+  deleteFavourite(itemUuid): void {
+    const uuidToDelete = itemUuid;
     const index: number = this.favItems.findIndex(({ uuid }) => uuid === uuidToDelete);
     if (index !== -1) {
       this.favItems.splice(index, 1);
@@ -30,8 +30,7 @@ export class FavouriteItemsComponent implements OnInit {
     }
   }
 
-  search(textToSearch){
-    debugger;
+  search(textToSearch): void {
     this.searchTitle = textToSearch;
   }
 }

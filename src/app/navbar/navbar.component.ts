@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FavouriteItemsComponent } from '../favourite-items/favourite-items.component';
 
 @Component({
@@ -12,7 +12,7 @@ export class NavbarComponent {
 
   constructor(private modalService: BsModalService) { }
 
-  openFavsModal(){
+  openFavsModal(): void {
     this.bsModalRef = this.modalService.show(FavouriteItemsComponent);
   }
 }
