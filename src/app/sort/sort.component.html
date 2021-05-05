@@ -1,5 +1,5 @@
 <div class="container pb-5">
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-center">
         <div class="col-md-10 text-right">
             <div class="btn-group dropleft">
                 <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -14,10 +14,12 @@
                 </div>
             </div>
 
-            <span class="align-self-center" *ngIf="order" (click)="setSortCriteria(order = !order)">
+            <span class="align-self-center" *ngIf="order" (click)="setSortCriteria(order = !order)"
+            placement="top" ngbTooltip="Sort items descendent">
                 <i class="fas fa-sort-up"></i>
             </span>
-            <span class="align-self-center" *ngIf="!order" (click)="setSortCriteria(order = !order)">
+            <span class="align-self-center" *ngIf="!order" (click)="setSortCriteria(order = !order)"
+            placement="bottom" ngbTooltip="Sort items ascendent">
                 <i class="fas fa-sort-down"></i>
             </span>
         </div>

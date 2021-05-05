@@ -1,5 +1,7 @@
-<app-navbar></app-navbar>
-<div class="bg-white">
+<div class="bg-light">
+  <app-navbar></app-navbar>
+</div>
+<div class="bg-white collapse show" id="filters">
   <app-search (groupFilters)="filters = $event"></app-search>
   <app-sort (sortProperty)="property = $event" (sortCriteria)="criteria = $event"></app-sort>
 </div>
