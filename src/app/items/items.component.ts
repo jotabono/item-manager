@@ -88,7 +88,7 @@ export class ItemsComponent implements OnInit, OnChanges {
 	isFavourite(itemUuid): boolean {
 		const uuidToCheck = itemUuid;
 		let favs = [];
-		if (localStorage.getItem('fav')){
+		if (localStorage.getItem('favs')){
 			favs = JSON.parse(localStorage.getItem('favs'));
 		}
 		return favs.find(({ uuid }) => uuid === uuidToCheck);
