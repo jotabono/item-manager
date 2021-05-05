@@ -35,7 +35,7 @@ export class ItemsComponent implements OnInit {
 			let result = keys.map(key => {
 				if (!~key.indexOf('price')) {
 					if (item[key]) {
-						return String(item[key]).toLowerCase().startsWith(String(filters[key]).toLowerCase())
+						return String(item[key]).toLowerCase().includes(String(filters[key]).toLowerCase())
 					} else {
 						return false;
 					}
@@ -55,6 +55,7 @@ export class ItemsComponent implements OnInit {
 			}
 			return result.reduce((acc, cur: any) => { return acc & cur }, 1)
 		}
+		console.log(filterItem);
 		this.filteredItems = this.items.filter(filterItem);
 	}
 

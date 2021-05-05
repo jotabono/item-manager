@@ -43,8 +43,12 @@
       </div>
     </div>
   </div>
-
-  <div class="d-flex justify-content-center col-12 mb-5">
+  <div class="col-12 mb-5 text-center">
+    <p *ngIf="!filteredItems.length">
+      No items were found :(
+    </p>
+  </div>
+  <div *ngIf="filteredItems.length" class="d-flex justify-content-center col-12 mb-5">
     <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
   </div>
 </div>
