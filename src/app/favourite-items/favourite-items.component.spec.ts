@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { FavouriteItemsComponent } from './favourite-items.component';
 
@@ -8,9 +9,10 @@ describe('FavouriteItemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavouriteItemsComponent ]
+      imports: [Ng2SearchPipeModule],
+      declarations: [FavouriteItemsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

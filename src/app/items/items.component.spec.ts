@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SortPipe } from '../sort.pipe';
 
 import { ItemsComponent } from './items.component';
 
@@ -8,7 +11,8 @@ describe('ItemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemsComponent ]
+      imports: [HttpClientModule, NgxPaginationModule],
+      declarations: [ ItemsComponent, SortPipe ]
     })
     .compileComponents();
   });

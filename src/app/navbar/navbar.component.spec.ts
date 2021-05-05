@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentLoaderFactory } from 'ngx-bootstrap/component-loader';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { PositioningService } from 'ngx-bootstrap/positioning';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,9 +11,10 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      providers: [BsModalService, ComponentLoaderFactory, PositioningService],
+      declarations: [NavbarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
