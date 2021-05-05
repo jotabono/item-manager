@@ -66,6 +66,8 @@ export class ItemsComponent implements OnInit {
 	}
 
 	setFavourite(item): void {
+		this.favouriteItems = [];
+		this.favouriteItems = JSON.parse(localStorage.getItem("favs"));
 		this.favouriteItems.push(item);
 		localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
 	}
