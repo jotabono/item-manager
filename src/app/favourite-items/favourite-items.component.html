@@ -1,0 +1,42 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="favsModalLongTitle">My favourite items</h5>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center mb-3">
+          <div class="col-md-10 pl-0 pr-0">
+            <div class="form-group">
+              <input class="form-control" type="search" placeholder="Search by title" aria-label="Search by title"
+                [(ngModel)]="searchTitle">
+            </div>
+          </div>
+        </div>
+        <div class="col-12" *ngFor="let favItem of favItems | filter:searchTitle ">
+          <div class="d-flex justify-content-center mb-3">
+            <div class="col-md-10 pl-0 pr-0">
+              <div class="card card-body border-0 p-0">
+                <div
+                  class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                  <div class="mb-3 mb-lg-0"> <img class="rounded-circle" src="{{favItem.image}}" width="60" height="60"
+                      alt=""> </div>
+                  <div class="media-body p-3">
+                    <h6 class="media-title font-weight-semibold"> <a class="main-link" href="#"
+                        data-abc="true">{{favItem.title}}</a> </h6>
+                  </div>
+                  <div class="mt-3 mt-lg-0 ml-lg-3 p-3 text-right">
+                    <button type="button" class="btn btn-link favorite-btn p-0"
+                      (click)="deleteFavourite(favItem.uuid)"><i class="fas fa-heart fav-heart"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!favItems.length">
+        You don't have favorited items yet :(
+      </div>
+    </div>
+  </div>

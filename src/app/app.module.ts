@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,6 +16,7 @@ import { SortComponent } from './sort/sort.component';
 import { SortPipe } from './sort.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FavouriteItemsComponent } from './favourite-items/favourite-items.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FilterPipe,
     SearchComponent,
     SortComponent,
-    SortPipe
+    SortPipe,
+    FavouriteItemsComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +36,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ModalModule.forRoot()    
   ],
   providers: [],
   bootstrap: [AppComponent]
