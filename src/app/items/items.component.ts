@@ -21,6 +21,7 @@ export class ItemsComponent implements OnInit, OnChanges {
 
 	ngOnInit(): void {
 		this.getItems();
+		localStorage.setItem('favs', JSON.stringify(this.favouriteItems));
 		if (localStorage.getItem('favs')) {
 			this.favouriteItems = JSON.parse(localStorage.getItem('favs'));
 		}
