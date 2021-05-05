@@ -1,3 +1,41 @@
+@import 'src/styles';
+
 .sort-link {
-    color: #13c1ac;
+    color: $main-color;
+}
+
+.form-control:focus {
+    border: 1px solid $main-color;
+}
+
+.main-btn{
+    border: none;
+    background-color: $main-color;
+}
+
+.main-link {
+    color: $main-color;
+}
+
+.btn-link{
+    color: $link-color;
+}
+
+.btn-link:hover{
+    color: $secondary-color;
+}
+
+.btn:focus, .form-control:focus {
+    box-shadow: none;
+    outline: none !important;
+}
+
+.main-btn:active, .main-btn:focus{
+    border: none !important;
+    background-color: $secondary-color !important;
+}
+
+.main-btn:hover {
+    border: none;
+    background-color: $secondary-color;
 }

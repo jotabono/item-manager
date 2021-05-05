@@ -1,0 +1,26 @@
+@import 'src/styles';
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+
+    &--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+.nav-border {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.bg-items {
+    background-color: $bg-items;
+}
+
+.main-border {
+    border-top: 1px solid #ebebeb;
+}

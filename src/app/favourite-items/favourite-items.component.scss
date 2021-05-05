@@ -1,0 +1,9 @@
+@import 'src/styles';
+
+.main-link {
+    color: $secondary-color;
+}
+
+.main-link:hover {
+    color: $main-color;
+}

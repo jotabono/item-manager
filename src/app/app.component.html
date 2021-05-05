@@ -1,10 +1,12 @@
-<div class="bg-light">
+<section class="bg-light nav-border main-nav--sticky">
   <app-navbar></app-navbar>
-</div>
-<div class="bg-white collapse show" id="filters">
+</section>
+<section class="collapse show" id="filters">
   <app-search (groupFilters)="filters = $event"></app-search>
   <app-sort (sortProperty)="property = $event" (sortCriteria)="criteria = $event"></app-sort>
-</div>
-<main class="container main-border">
-  <app-items [groupFilters]="filters" [sortProperty]="property" [sortCriteria]="criteria"></app-items>
-</main>
+</section>
+<section class="bg-items main-border">
+  <main class="container">
+    <app-items [groupFilters]="filters" [sortProperty]="property" [sortCriteria]="criteria"></app-items>
+  </main>
+</section>

@@ -2,7 +2,7 @@
   <div class="col-12 p-0">
     <div class="d-flex justify-content-center mb-3">
       <div class="col-md-10 pl-0 pr-0">
-        <button type="button" class="btn btn-link" placement="top" ngbTooltip="Toggle search filters"
+        <button type="button" class="btn btn-link toggle-filters-btn" placement="top" ngbTooltip="Toggle search filters"
           data-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters"><i
             class="fa fa-filter"></i></button>
       </div>
@@ -12,11 +12,10 @@
     *ngFor="let item of filteredItems | sort:{ property: sortProperty, descending: sortCriteria } | paginate: {itemsPerPage: 5, currentPage: actualPage}">
     <div class="d-flex justify-content-center mb-3">
       <div class="col-md-10 pl-0 pr-0">
-        <div class="card mb-3">
+        <div class="card mb-3 product-card">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="{{item.image}}" alt="..." class="img-fluid"
-                style="object-fit: cover; width:100%; max-height: 200px;" />
+              <img src="{{item.image}}" alt="..." class="img-fluid product-card__card__img" style="" />
             </div>
             <div class="col-md-5">
               <div class="card-body">
@@ -31,17 +30,16 @@
             </div>
             <div class="col-md-3 text-right">
               <div class="card-body">
-                <button type="button" class="btn btn-light p-3 rounded-circle" *ngIf="!isFavourite(item.uuid)"
+                <button type="button" class="btn btn-light rounded-circle fav-btn" *ngIf="!isFavourite(item.uuid)"
                   (click)="setFavourite(item)" placement="top" ngbTooltip="Add to favourites!"><i
-                    class="far fa-heart fav-heart"></i></button>
-                <button type="button" class="btn btn-light p-3 rounded-circle" *ngIf="isFavourite(item.uuid)"
+                    class="far fa-heart fav-btn__fav__heart"></i></button>
+                <button type="button" class="btn btn-light rounded-circle fav-btn" *ngIf="isFavourite(item.uuid)"
                   (click)="deleteFavourite(item.uuid)" placement="top" ngbTooltip="Delete from favourite list"><i
-                    class="fas fa-heart fav-heart"></i></button>
+                    class="fas fa-heart fav-btn__fav__heart"></i></button>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

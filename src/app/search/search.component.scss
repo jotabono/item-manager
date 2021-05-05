@@ -1,0 +1,25 @@
+@import "src/styles";
+
+.im-form:focus {
+    border: $primary-border;
+    box-shadow: none;
+    outline: none !important;
+}
+
+.main-btn {
+    border: none;
+    background-color: #13c1ac;
+
+}
+
+.main-btn:active,
+.main-btn:focus,
+.main-btn.active {
+    box-shadow: 0 0 0 0.2rem rgb(123 255 210 / 50%) !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.main-btn:hover, .main-btn:active {
+    background-color: $secondary-color !important;
+}

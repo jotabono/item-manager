@@ -1,3 +1,5 @@
+@import "src/styles";
+
 body {
   margin: 0;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
@@ -11,19 +13,11 @@ body {
 }
 
 .product-card {
-  border-top-left-radius: 3%;
-  border-bottom-left-radius: 3%;
-
   &__card__img {
-    max-height: 200px;
     object-fit: cover;
-    border-top-left-radius: 3%;
-    border-bottom-left-radius: 3%;
+    width: 100%;
+    max-height: 200px;
   }
-}
-
-.item-title {
-    color: #13c1ac;
 }
 
 .crop-text-3 {
@@ -34,33 +28,22 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.favorite-btn {
-  position: absolute;
-  bottom:20px;
-  right:20px;
+.fav-btn {
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+
+  &__fav__heart {
+    color: $main-color;
+    font-size: 24px;
+  }
 }
 
-.fav-heart {
-  color: #13C1AC;
-  font-size: 36px;
+.btn-link {
+  color: $link-color;
 }
 
-.mt-50 {
-  margin-top: 50px;
-}
-
-.mb-50 {
-  margin-bottom: 50px;
-}
-
-.bg-teal-400 {
-  background-color: #26a69a;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-.fa {
-  color: red;
+.toggle-filters-btn:active,
+.toggle-filters-btn:focus {
+  box-shadow: none;
 }
